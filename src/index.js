@@ -7,9 +7,12 @@ Kapseli.plugins.add("ckeditor-kapseli", (app, opts) => {
             ...CONFIG,
             ...opts || {}
     }
-
-    let add_comp = app.View.addComponent;
+    
     const Component = app.Component;
+
+    const add_comp = (el,k) => {
+        app.View.addComponent(el,k);
+    }
 
     let CKEDITOR = _Ckeditor(Component);
     let c = new CKEDITOR();

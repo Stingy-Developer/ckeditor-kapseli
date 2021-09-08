@@ -7,9 +7,9 @@ export const _Ckeditor = (Component) => {
                     textarea_id: Math.random().toString(16).substring(2,7) 
                 },
                 template:(
-                    <textarea id={this.data.textarea_id} cols="30" rows="10"></textarea>
+                    <textarea bind-id="textarea_id" cols="30" rows="10"></textarea>
                 ),
-                mounted(){
+                mounted: () => {
                     try {
                         CKEDITOR.replace(this.data.textarea_id, {
                             height: 400,
